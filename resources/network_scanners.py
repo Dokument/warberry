@@ -263,12 +263,12 @@ def scanner_targetted(CIDR):
                         print bcolors.OKGREEN +('   *** XServer Found : %s via port 6000 ***' % (host)) + bcolors.ENDC
                         xserver.write('%s\n' %host)
 
-        print "[+] Scanning for SNV Repositories..."
+        print "[+] Scanning for SVN Repositories..."
         nm.scan(hosts=CIDR, arguments='-T4 -Pn -p3690 --open')
         for host in nm.all_hosts():
                 with open('../Results/svn', 'a') as svn:
                         print('----------------------------------------------------')
-                        print bcolors.OKGREEN + ('   *** SNV Repositoriy Found : %s via port 3690 ***' % (host)) + bcolors.ENDC
+                        print bcolors.OKGREEN + ('   *** SVN Repositoriy Found : %s via port 3690 ***' % (host)) + bcolors.ENDC
                         svn.write('%s\n' % host)
 
         print "[+] Scanning for SNMP..."
